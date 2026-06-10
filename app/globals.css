@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-kw-red: #CC0000;
+  --color-kw-red-dark: #aa0000;
+  --color-kw-red-light: #e60000;
+  --color-black: #0a0a0a;
+  --color-dark: #111111;
+  --color-dark-mid: #1a1a1a;
+  --color-gray-dark: #333333;
+  --color-gray-mid: #666666;
+  --color-gray-light: #999999;
+  --color-off-white: #f5f5f5;
+  --color-surface: #ffffff;
+  --font-sans: var(--font-geist-sans, system-ui, sans-serif);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #ffffff;
+  color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.red-text {
+  color: #CC0000;
+}
+
+.card-lift {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.15);
+}
+
+.img-zoom img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-up {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.stagger-1 { animation-delay: 0.05s; opacity: 0; }
+.stagger-2 { animation-delay: 0.1s; opacity: 0; }
+.stagger-3 { animation-delay: 0.15s; opacity: 0; }
+.stagger-4 { animation-delay: 0.2s; opacity: 0; }
+.stagger-5 { animation-delay: 0.25s; opacity: 0; }
+.stagger-6 { animation-delay: 0.3s; opacity: 0; }
