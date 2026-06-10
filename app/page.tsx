@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import OpenHouseCard from "@/components/OpenHouseCard";
 import ListingCard from "@/components/ListingCard";
