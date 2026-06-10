@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Bed, Bath, Move } from "lucide-react";
+import { photoUrl } from "@/lib/photos";
 
 interface Listing {
   id: string;
@@ -34,7 +35,7 @@ const statusBadge: Record<string, string> = {
 export default function ListingCard({ listing, index }: { listing: Listing; index: number }) {
   const staggerClass = `stagger-${Math.min(index + 1, 6)}`;
   const hasPhoto = listing.photos.length > 0;
-  const photoSrc = hasPhoto ? `/photos/${listing.id}/${listing.photos[0]}` : null;
+  const photoSrc = hasPhoto ? photoUrl(listing.id, listing.photos[0]) : null;
   const badge = statusBadge[listing.status];
 
   return (

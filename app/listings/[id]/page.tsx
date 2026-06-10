@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Bed, Bath, Move, MapPin, ChevronLeft, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import PhotoLightbox from "@/components/PhotoLightbox";
+import { photoUrl } from "@/lib/photos";
 import listingsData from "@/data/active-listings.json";
 
 export async function generateStaticParams() {
@@ -42,7 +43,7 @@ export default async function ListingPage({
         {photos.length > 0 ? (
           <div className="relative h-[55vh] md:h-[65vh] w-full bg-gray-100">
             <Image
-              src={`/photos/${listing.id}/${photos[0]}`}
+              src={photoUrl(listing.id, photos[0])}
               alt={listing.address}
               fill
               priority

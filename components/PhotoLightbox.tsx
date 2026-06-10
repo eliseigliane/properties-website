@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useCallback } from "react";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { photoUrl } from "@/lib/photos";
 
 export default function PhotoLightbox({
   photos,
@@ -58,7 +59,7 @@ export default function PhotoLightbox({
             className="group relative aspect-[4/3] overflow-hidden bg-gray-100 focus:outline-none"
           >
             <Image
-              src={`/photos/${listingId}/${photo}`}
+              src={photoUrl(listingId, photo)}
               alt={`${address} — photo ${i + 1}`}
               fill
               sizes="(max-width:768px) 50vw, 33vw"

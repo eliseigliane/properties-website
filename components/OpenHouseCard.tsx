@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { photoUrl } from "@/lib/photos";
 import { Bed, Bath, Move, Clock, Calendar, Copy, Check, MapPin } from "lucide-react";
 import { useState } from "react";
 
@@ -86,7 +87,7 @@ export default function OpenHouseCard({ house, index }: { house: OpenHouse; inde
   }
 
   const hasPhoto = house.photos.length > 0;
-  const photoSrc = hasPhoto ? `/photos/${house.id}/${house.photos[0]}` : null;
+  const photoSrc = hasPhoto ? photoUrl(house.id, house.photos[0]) : null;
 
   return (
     <div className={`group bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 fade-in-up ${staggerClass} overflow-hidden`}>
