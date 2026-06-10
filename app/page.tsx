@@ -73,8 +73,7 @@ export default function Home() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {openHousesData.map((house, i) => (
-                // @ts-expect-error json shape matches
-                <OpenHouseCard key={house.id} house={house} index={i} />
+                <OpenHouseCard key={house.id} house={house as any} index={i} />
               ))}
             </div>
           )}
@@ -104,8 +103,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {listingsData.map((listing, i) => (
-              // @ts-expect-error json shape matches
-              <ListingCard key={listing.id} listing={listing} index={i} />
+              <ListingCard key={listing.id} listing={listing as any} index={i} />
             ))}
           </div>
         </div>

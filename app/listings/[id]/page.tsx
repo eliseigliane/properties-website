@@ -23,7 +23,6 @@ export default async function ListingPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  // @ts-expect-error json fields
   const listing = listingsData.find((l) => l.id === id);
   if (!listing) notFound();
 
